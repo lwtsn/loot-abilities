@@ -274,7 +274,7 @@ contract LootClassAbilities is ERC721Enumerable, ReentrancyGuard, Ownable {
     function pluckSkill(uint256 tokenId, string[7] memory skills, string memory keyPrefix) internal pure returns (string memory) {
         uint256 rand = random(string(abi.encodePacked(keyPrefix, toString(tokenId))));
         string memory output = skills[rand % skills.length];
-        output = string(abi.encodePacked(keyPrefix, ": ", output));
+        output = string(abi.encodePacked(output));
 
         return output;
     }
@@ -283,7 +283,7 @@ contract LootClassAbilities is ERC721Enumerable, ReentrancyGuard, Ownable {
         string memory keyPrefix = "ULTIMATE_SKILL";
         uint256 rand = random(string(abi.encodePacked(keyPrefix, toString(tokenId))));
         string memory output = skills[rand % skills.length];
-        output = string(abi.encodePacked(keyPrefix, ": ", output));
+        output = string(abi.encodePacked(output));
 
         return output;
     }
